@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e3fa2192-3ba3-4e82-a46a-e7bd712e60b9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-app-iis1:3521/PartService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="PartService.xsd" MetadataType="Schema" ID="fe3ccd33-636e-4b1f-ad85-c31f4d290164" SourceId="1" SourceUrl="http://dev-app-iis1:3521/PartService.svc?xsd=xsd1" />
+    <MetadataFile FileName="PartService.wsdl" MetadataType="Wsdl" ID="a14b0f1a-9277-4566-b9a2-c16adc9fafe6" SourceId="1" SourceUrl="http://dev-app-iis1:3521/PartService.svc?wsdl" />
+    <MetadataFile FileName="PartService1.xsd" MetadataType="Schema" ID="4447375c-18df-41a6-aad2-503f1d6c2f41" SourceId="1" SourceUrl="http://dev-app-iis1:3521/PartService.svc?xsd=xsd2" />
+    <MetadataFile FileName="PartService2.xsd" MetadataType="Schema" ID="fc3e3425-fad8-40a9-8938-6bb4b1774263" SourceId="1" SourceUrl="http://dev-app-iis1:3521/PartService.svc?xsd=xsd0" />
+    <MetadataFile FileName="PartService.disco" MetadataType="Disco" ID="85f2aa99-ec34-4088-a347-bc29cc6dc45f" SourceId="1" SourceUrl="http://dev-app-iis1:3521/PartService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

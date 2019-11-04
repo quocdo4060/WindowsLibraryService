@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfResource">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Resource" nillable="true" type="tns:Resource" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResource" nillable="true" type="tns:ArrayOfResource" />
+  <xs:complexType name="Resource">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AUTOLABEL" type="xs:int" />
+      <xs:element minOccurs="0" name="AUTOLOGOFFRUN_MINUTES" type="xs:int" />
+      <xs:element minOccurs="0" name="AUTOLOGOFF_MINUTES" type="xs:int" />
+      <xs:element minOccurs="0" name="AUTOTRAVELER" type="xs:int" />
+      <xs:element minOccurs="0" name="AUTO_APPROVE" type="xs:int" />
+      <xs:element minOccurs="0" name="CALC_RUNTIME" type="xs:int" />
+      <xs:element minOccurs="0" name="CLOCKINOUT_RESOURCE" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPLEX_KITTING" type="xs:int" />
+      <xs:element minOccurs="0" name="DEPT" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="DESTINATIONS" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FORECAST_DAYS" type="xs:int" />
+      <xs:element minOccurs="0" name="GROUP_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="KITTINGWINDOW" type="xs:int" />
+      <xs:element minOccurs="0" name="KPI_REFRESH" type="xs:decimal" />
+      <xs:element minOccurs="0" name="KPI_REMOVETIME" type="xs:int" />
+      <xs:element minOccurs="0" name="LASTLOGINDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LASTUPDATED" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LASTUPDATEDBY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MACHINE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MESONLY_MODE" type="xs:int" />
+      <xs:element minOccurs="0" name="MIN_UTILIZATION" type="xs:int" />
+      <xs:element minOccurs="0" name="NESTTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NESTVERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_BRAKEWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_DATEWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_JOBLIMIT" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_LIBRARYSERVER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_MACHABBREV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_MAPPEDDRIVE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_NESTINGBASEPATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_PAINTWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_POST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_RESULTFILE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_SCRAPWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_SERVERPATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEST_SPLITWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_URGENTWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_WELDSPLITWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="NEST_WELDWEIGHTFACTOR" type="xs:int" />
+      <xs:element minOccurs="0" name="OPERATIONS" nillable="true" type="tns:ArrayOfResourceOperation" />
+      <xs:element minOccurs="0" name="OPERATIONSNOTIN" nillable="true" type="tns:ArrayOfResourceOperationNotIN" />
+      <xs:element minOccurs="0" name="ORACLE_CURRENT_TIME" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ORACLE_RESOURCEID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORACLE_TIME_OFFSET" type="xs:int" />
+      <xs:element minOccurs="0" name="ORGCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PLC_TAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRINTLABEL_PATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REQUIREBATCHINPUT" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SHOPLOCATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SINGLEPARTPROGRAMPATHS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USE_REMNANTS" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Resource" nillable="true" type="tns:Resource" />
+  <xs:complexType name="ArrayOfResourceOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceOperation" nillable="true" type="tns:ResourceOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceOperation" nillable="true" type="tns:ArrayOfResourceOperation" />
+  <xs:complexType name="ResourceOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OPERATION_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="STANDARD_OPERATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STD_OP_ID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceOperation" nillable="true" type="tns:ResourceOperation" />
+  <xs:complexType name="ArrayOfResourceOperationNotIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceOperationNotIN" nillable="true" type="tns:ResourceOperationNotIN" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceOperationNotIN" nillable="true" type="tns:ArrayOfResourceOperationNotIN" />
+  <xs:complexType name="ResourceOperationNotIN">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OPERATIONDESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCEID" type="xs:int" />
+      <xs:element minOccurs="0" name="STDOPCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STDOPID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceOperationNotIN" nillable="true" type="tns:ResourceOperationNotIN" />
+  <xs:complexType name="ArrayOfResourceChanges">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceChanges" nillable="true" type="tns:ResourceChanges" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceChanges" nillable="true" type="tns:ArrayOfResourceChanges" />
+  <xs:complexType name="ResourceChanges">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FIELD_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HISTORY_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LAST_UPDATED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATEDBY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MACHINE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NEW_VALUE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OLD_VALUE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceChanges" nillable="true" type="tns:ResourceChanges" />
+  <xs:complexType name="ArrayOfResourceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceGroup" nillable="true" type="tns:ResourceGroup" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceGroup" nillable="true" type="tns:ArrayOfResourceGroup" />
+  <xs:complexType name="ResourceGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GROUP_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="GROUP_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceGroup" nillable="true" type="tns:ResourceGroup" />
+  <xs:complexType name="ResourceLibrary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMMIT" type="xs:int" />
+      <xs:element minOccurs="0" name="FILENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HITS" type="xs:int" />
+      <xs:element minOccurs="0" name="IMPORT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IMPORT_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LOGGED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PARTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIERCES" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="REVISION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLCHANGES" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLPATH" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceLibrary" nillable="true" type="tns:ResourceLibrary" />
+  <xs:complexType name="ArrayOfMachineChunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MachineChunk" nillable="true" type="tns:MachineChunk" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMachineChunk" nillable="true" type="tns:ArrayOfMachineChunk" />
+  <xs:complexType name="MachineChunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MACHINE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NESTTYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCE_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MachineChunk" nillable="true" type="tns:MachineChunk" />
+  <xs:complexType name="ArrayOfOrganization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Organization" nillable="true" type="tns:Organization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOrganization" nillable="true" type="tns:ArrayOfOrganization" />
+  <xs:complexType name="Organization">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ORGCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORGNAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Organization" nillable="true" type="tns:Organization" />
+  <xs:complexType name="ArrayOfDestination">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Destination" nillable="true" type="tns:Destination" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDestination" nillable="true" type="tns:ArrayOfDestination" />
+  <xs:complexType name="Destination">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LOCATIONID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOCATOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="SUBINVENTORY" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Destination" nillable="true" type="tns:Destination" />
+  <xs:complexType name="ArrayOfResourceChunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceChunk" nillable="true" type="tns:ResourceChunk" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceChunk" nillable="true" type="tns:ArrayOfResourceChunk" />
+  <xs:complexType name="ResourceChunk">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MACHINE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCE_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="RESOURCE_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceChunk" nillable="true" type="tns:ResourceChunk" />
+</xs:schema>

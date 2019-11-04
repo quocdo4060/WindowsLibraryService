@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" />
+  <xs:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="GetDefaults">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDefaultsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetDefaultsResult" nillable="true" type="q1:ArrayOfResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByMachine">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedMachine" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByMachineResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceListByMachineResult" nillable="true" type="q2:ArrayOfResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedMachine" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceHistoryResult" nillable="true" type="q3:ArrayOfResourceChanges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceListByIDResult" nillable="true" type="q4:ArrayOfResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByResourceName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedResource" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByResourceNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceListByResourceNameResult" nillable="true" type="q5:ArrayOfResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByNestType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedNestType" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListByNestTypeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceListByNestTypeResult" nillable="true" type="q6:ArrayOfResource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedResource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewResourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="AddNewResourceResult" nillable="true" type="q7:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewResourceFromDefaultName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedDefault" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewResourceFromDefaultNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="AddNewResourceFromDefaultNameResult" nillable="true" type="q8:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfigureFromMachineName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedFromMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedToMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfigureFromMachineNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="ConfigureFromMachineNameResult" nillable="true" type="q9:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfigureFromResourceName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedFromMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedToMachine" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConfigureFromResourceNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="ConfigureFromResourceNameResult" nillable="true" type="q10:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResourceByDefaultName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedDefault" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResourceByDefaultNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="ResetResourceByDefaultNameResult" nillable="true" type="q11:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedResource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetResourceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="ResetResourceResult" nillable="true" type="q12:Resource" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextImportId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextImportIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNextImportIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperations">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetOperationsResult" nillable="true" type="q13:ArrayOfResourceOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsByOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOperationsByOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetOperationsByOrgResult" nillable="true" type="q14:ArrayOfResourceOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceGroupsResult" nillable="true" type="q15:ArrayOfResourceGroup" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceDestination">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedDestination" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceDestinationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="requestedOperation" nillable="true" type="q16:ResourceOperation" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceOperationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceOperationNotin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="requestedOperation" nillable="true" type="q17:ResourceOperationNotIN" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceOperationNotinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewDefault">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedResource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateNewDefaultResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceDestination">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedDestination" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceDestinationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceOperation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="requestedOperation" nillable="true" type="q18:ResourceOperation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceOperationResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceOperationNotin">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="requestedOperation" nillable="true" type="q19:ResourceOperationNotIN" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveResourceOperationNotinResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConfigurationItem">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedResourceID" type="xs:int" />
+        <xs:element minOccurs="0" name="requestedField" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="currentUser" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveConfigurationItemResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertResourceChangesHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="machineName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastUpdated" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="oldValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="newValue" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fieldName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lastUpdateBy" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertResourceChangesHistoryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewNestPost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pPostName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertNewNestPostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="intReturn" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceLibDataStagingLocArr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element xmlns:q20="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col1_import_id" nillable="true" type="q20:ArrayOfint" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col2_import_status" nillable="true" type="q21:ArrayOfstring" />
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col3_filename" nillable="true" type="q22:ArrayOfstring" />
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col4_logged_by" nillable="true" type="q23:ArrayOfstring" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col5_partname" nillable="true" type="q24:ArrayOfstring" />
+        <xs:element xmlns:q25="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col6_revision" nillable="true" type="q25:ArrayOfstring" />
+        <xs:element xmlns:q26="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col7_material" nillable="true" type="q26:ArrayOfstring" />
+        <xs:element xmlns:q27="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col8_resourcename" nillable="true" type="q27:ArrayOfstring" />
+        <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col9_resource_id" nillable="true" type="q28:ArrayOfint" />
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col10_orgid" nillable="true" type="q29:ArrayOfint" />
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col11_hits" nillable="true" type="q30:ArrayOfint" />
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col12_toolchanges" nillable="true" type="q31:ArrayOfint" />
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col13_pierces" nillable="true" type="q32:ArrayOfint" />
+        <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_col14_toolpath" nillable="true" type="q33:ArrayOfdecimal" />
+        <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="p_commit" nillable="true" type="q34:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceLibDataStagingLocArrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddResourceLibDataStagingLocArrResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceLibDataStaging">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="stagingData" nillable="true" type="q35:ResourceLibrary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResourceLibDataStagingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddResourceLibDataStagingResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOptiImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iImportId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessOptiImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessOptiImportResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCancelImport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="iImportId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessCancelImportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessCancelImportResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachineList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachineListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetMachineListResult" nillable="true" type="q36:ArrayOfMachineChunk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachineListByOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMachineListByOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetMachineListByOrgResult" nillable="true" type="q37:ArrayOfMachineChunk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrgListAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrgListAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetOrgListAllResult" nillable="true" type="q38:ArrayOfOrganization" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDestinationListAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDestinationListAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetDestinationListAllResult" nillable="true" type="q39:ArrayOfDestination" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResourceListAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" minOccurs="0" name="GetResourceListAllResult" nillable="true" type="q40:ArrayOfResourceChunk" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNestResourcesList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNestResourcesListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNestResourcesListResult" nillable="true" type="q41:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNestPostsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNestPostsListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetNestPostsListResult" nillable="true" type="q42:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryListAll">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCategoryListAllResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCategoryListAllResult" nillable="true" type="q43:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDestinationListByOrg">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="db" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="requestedOrg" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDestinationListByOrgResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetDestinationListByOrgResult" nillable="true" type="q44:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{10471C84-3073-4AD9-BB73-B9A259F2D71F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Powell.Mfg.LibraryWinService</RootNamespace>
+    <AssemblyName>Powell.Mfg.LibraryWinService</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>\\dev-dpmsrv1\c%24\DEPLOY\WinNestLibraryService\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;_PERFORMANCE_LOG_</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E85935B5C90C724D5AED3B9856E886A0BFDEC457</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Powell.Mfg.LibraryWinService_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Powell.ENG.Log.Performance, Version=1.5.6947.25422, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Powell.Eng.Log.Performance.1.6.190081471\lib\net45\Powell.ENG.Log.Performance.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cNetworkDrives0015.cs" />
+    <Compile Include="DxfLayers.cs" />
+    <Compile Include="ExceptionClasses.cs" />
+    <Compile Include="ModelQueue.cs" />
+    <Compile Include="ProcessState.cs" />
+    <Compile Include="Service References\LibraryServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\PartServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ResourceServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="WebAppClient.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.token">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="InstallBuild\DeployInstaller.ps1" />
+    <None Include="InstallBuild\InstallWinservice.bat" />
+    <None Include="packages.config" />
+    <None Include="Powell.Mfg.LibraryWinService_TemporaryKey.pfx" />
+    <None Include="Service References\LibraryServiceReference\LibraryService1.wsdl" />
+    <None Include="Service References\LibraryServiceReference\LibraryService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LibraryServiceReference\LibraryService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LibraryServiceReference\LibraryService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LibraryServiceReference\LibraryService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.LibraryRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.LibraryResult.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.NestPost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.QueueRecord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.QueueTotals.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LibraryServiceReference\Powell.Mfg.LibraryWinService.LibraryServiceReference.RollFormCnc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\PartService.wsdl" />
+    <None Include="Service References\PartServiceReference\PartService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartServiceReference\PartService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartServiceReference\PartService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.AgilePart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.BasicPart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.BasicPartRouting.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.Bom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.DesignPart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.ElementList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.PaintCode.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.Part.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.PartCost.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.PartNote.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.PartQtyOnHand.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.PartRouting.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.ResourceLibraryData.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\PartServiceReference\Powell.Mfg.LibraryWinService.PartServiceReference.RoutingLog.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.Destination.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.MachineChunk.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.Organization.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.Resource.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.ResourceChanges.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.ResourceChunk.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.ResourceGroup.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\Powell.Mfg.LibraryWinService.ResourceServiceReference.ResourceOperation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ResourceServiceReference\ResourceService1.wsdl" />
+    <None Include="Service References\ResourceServiceReference\ResourceService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceServiceReference\ResourceService41.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceServiceReference\ResourceService42.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ResourceServiceReference\ResourceService43.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Service1.resx">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LibraryServiceReference\" />
+    <WCFMetadataStorage Include="Service References\PartServiceReference\" />
+    <WCFMetadataStorage Include="Service References\ResourceServiceReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartServiceReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\PartServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ResourceServiceReference\ResourceService1.disco" />
+    <None Include="Service References\PartServiceReference\PartService.disco" />
+    <None Include="Service References\LibraryServiceReference\LibraryService1.disco" />
+    <None Include="Service References\ResourceServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ResourceServiceReference\configuration.svcinfo" />
+    <None Include="Service References\ResourceServiceReference\configuration91.svcinfo" />
+    <None Include="Service References\LibraryServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LibraryServiceReference\configuration.svcinfo" />
+    <None Include="Service References\LibraryServiceReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

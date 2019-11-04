@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="PartService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IPartService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dev-app-iis1:3521/PartService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3521/PartService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3521/PartService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IPartService_GetPart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPart" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetOrgPartList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgPartList" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetOrgPartList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgPartListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetAgilePartDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgilePartDetail" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetAgilePartDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgilePartDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetMaterials_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterials" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetMaterials_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMaterialsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetAgilePaintCodeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgilePaintCodeList" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetAgilePaintCodeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAgilePaintCodeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetBom_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBom" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetBom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBomResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingString_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingString" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingString_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingList" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingLog" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetRoutingLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutingLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartLibraryStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartLibraryStatus" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartLibraryStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartLibraryStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartLibrary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartLibrary" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartLibrary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartLibraryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartCost_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartCost" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartCost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartCostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartQtyOnHand_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartQtyOnHand" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetPartQtyOnHand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartQtyOnHandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetNotes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotes" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_GetNotes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_MaintainNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:MaintainNote" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_MaintainNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MaintainNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartLibraryErrored_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartLibraryErrored" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartLibraryErrored_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartLibraryErroredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartLibraryErroredAdvanced_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartLibraryErroredAdvanced" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartLibraryErroredAdvanced_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartLibraryErroredAdvancedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchParts" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartsByDesign_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartsByDesign" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPartsByDesign_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPartsByDesignResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPaintCodeOnParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPaintCodeOnParts" />
+  </wsdl:message>
+  <wsdl:message name="IPartService_SearchPaintCodeOnParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchPaintCodeOnPartsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IPartService">
+    <wsdl:operation name="GetPart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetPart" message="tns:IPartService_GetPart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetPartResponse" message="tns:IPartService_GetPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgPartList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetOrgPartList" message="tns:IPartService_GetOrgPartList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetOrgPartListResponse" message="tns:IPartService_GetOrgPartList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgilePartDetail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetAgilePartDetail" message="tns:IPartService_GetAgilePartDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetAgilePartDetailResponse" message="tns:IPartService_GetAgilePartDetail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetMaterials" message="tns:IPartService_GetMaterials_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetMaterialsResponse" message="tns:IPartService_GetMaterials_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAgilePaintCodeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetAgilePaintCodeList" message="tns:IPartService_GetAgilePaintCodeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetAgilePaintCodeListResponse" message="tns:IPartService_GetAgilePaintCodeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBom">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetBom" message="tns:IPartService_GetBom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetBomResponse" message="tns:IPartService_GetBom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingString">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetRoutingString" message="tns:IPartService_GetRoutingString_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetRoutingStringResponse" message="tns:IPartService_GetRoutingString_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetRoutingList" message="tns:IPartService_GetRoutingList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetRoutingListResponse" message="tns:IPartService_GetRoutingList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingLog">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetRoutingLog" message="tns:IPartService_GetRoutingLog_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetRoutingLogResponse" message="tns:IPartService_GetRoutingLog_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartLibraryStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetPartLibraryStatus" message="tns:IPartService_GetPartLibraryStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetPartLibraryStatusResponse" message="tns:IPartService_GetPartLibraryStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartLibrary">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetPartLibrary" message="tns:IPartService_GetPartLibrary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetPartLibraryResponse" message="tns:IPartService_GetPartLibrary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartCost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetPartCost" message="tns:IPartService_GetPartCost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetPartCostResponse" message="tns:IPartService_GetPartCost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartQtyOnHand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetPartQtyOnHand" message="tns:IPartService_GetPartQtyOnHand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetPartQtyOnHandResponse" message="tns:IPartService_GetPartQtyOnHand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNotes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/GetNotes" message="tns:IPartService_GetNotes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/GetNotesResponse" message="tns:IPartService_GetNotes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MaintainNote">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/MaintainNote" message="tns:IPartService_MaintainNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/MaintainNoteResponse" message="tns:IPartService_MaintainNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartLibraryErrored">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/SearchPartLibraryErrored" message="tns:IPartService_SearchPartLibraryErrored_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/SearchPartLibraryErroredResponse" message="tns:IPartService_SearchPartLibraryErrored_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartLibraryErroredAdvanced">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/SearchPartLibraryErroredAdvanced" message="tns:IPartService_SearchPartLibraryErroredAdvanced_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/SearchPartLibraryErroredAdvancedResponse" message="tns:IPartService_SearchPartLibraryErroredAdvanced_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchParts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/SearchParts" message="tns:IPartService_SearchParts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/SearchPartsResponse" message="tns:IPartService_SearchParts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartsByDesign">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/SearchPartsByDesign" message="tns:IPartService_SearchPartsByDesign_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/SearchPartsByDesignResponse" message="tns:IPartService_SearchPartsByDesign_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchPaintCodeOnParts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPartService/SearchPaintCodeOnParts" message="tns:IPartService_SearchPaintCodeOnParts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPartService/SearchPaintCodeOnPartsResponse" message="tns:IPartService_SearchPaintCodeOnParts_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IPartService" type="tns:IPartService">
+    <wsp:PolicyReference URI="#CustomBinding_IPartService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetPart">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetPart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgPartList">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetOrgPartList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgilePartDetail">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetAgilePartDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMaterials">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetMaterials" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAgilePaintCodeList">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetAgilePaintCodeList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBom">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetBom" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingString">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetRoutingString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingList">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetRoutingList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutingLog">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetRoutingLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartLibraryStatus">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetPartLibraryStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartLibrary">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetPartLibrary" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartCost">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetPartCost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartQtyOnHand">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetPartQtyOnHand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNotes">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/GetNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MaintainNote">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/MaintainNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartLibraryErrored">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/SearchPartLibraryErrored" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartLibraryErroredAdvanced">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/SearchPartLibraryErroredAdvanced" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchParts">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/SearchParts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPartsByDesign">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/SearchPartsByDesign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchPaintCodeOnParts">
+      <soap12:operation soapAction="http://tempuri.org/IPartService/SearchPaintCodeOnParts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PartService">
+    <wsdl:port name="CustomBinding_IPartService" binding="tns:CustomBinding_IPartService">
+      <soap12:address location="http://dev-app-iis1:3521/PartService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dev-app-iis1:3521/PartService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

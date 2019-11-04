@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="22cc27c1-1bec-483d-8072-4cd8a91a4313" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://dev-app-iis1:3541/ResourceService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ResourceService1.wsdl" MetadataType="Wsdl" ID="6d02e4c4-d85c-4547-b83f-e2829233c583" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?wsdl" />
+    <MetadataFile FileName="ResourceService1.disco" MetadataType="Disco" ID="fa122503-c68d-4a6f-bc67-0045264bc94b" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?disco" />
+    <MetadataFile FileName="ResourceService4.xsd" MetadataType="Schema" ID="01340b2e-03f6-4c16-a408-e57798e4613b" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ResourceService41.xsd" MetadataType="Schema" ID="1eeae50d-9294-4c25-8af4-6f65235abb51" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ResourceService42.xsd" MetadataType="Schema" ID="5b2316f0-7ff0-41c4-ac17-3a9320dcfee7" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ResourceService43.xsd" MetadataType="Schema" ID="2af99b23-887e-4c4f-93ca-89ce469cb8c0" SourceId="1" SourceUrl="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

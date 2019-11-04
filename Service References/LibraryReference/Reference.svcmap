@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9cb19afa-57ed-4c53-a147-061304693379" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://it-pwl-appsrc1:3721/LibraryService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LibraryService.wsdl" MetadataType="Wsdl" ID="2b8c5a5e-7ead-4d73-b56f-cbe9ec3faa9f" SourceId="1" SourceUrl="http://it-pwl-appsrc1:3721/LibraryService.svc?wsdl" />
+    <MetadataFile FileName="LibraryService.xsd" MetadataType="Schema" ID="b3123706-b8b8-4951-af5e-c0813a5a3028" SourceId="1" SourceUrl="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd0" />
+    <MetadataFile FileName="LibraryService1.xsd" MetadataType="Schema" ID="6a57c8f5-d3b3-4fa3-86d8-b12d1bf706cb" SourceId="1" SourceUrl="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LibraryService.disco" MetadataType="Disco" ID="caaee62b-c6df-4df7-b129-5ab6cc7bee08" SourceId="1" SourceUrl="http://it-pwl-appsrc1:3721/LibraryService.svc?disco" />
+    <MetadataFile FileName="LibraryService2.xsd" MetadataType="Schema" ID="4409f3cb-fa2b-4585-9682-998d9a6b48ac" SourceId="1" SourceUrl="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd2" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

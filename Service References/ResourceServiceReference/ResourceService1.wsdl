@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ResourceService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_IResourceService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.Resource" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3541/ResourceService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IResourceService_GetDefaults_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaults" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetDefaults_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDefaultsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByMachine_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByMachine" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByMachine_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByMachineResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceHistory" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByID" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByResourceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByResourceName" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByResourceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByResourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByNestType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByNestType" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListByNestType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListByNestTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddNewResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewResource" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddNewResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddNewResourceFromDefaultName_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewResourceFromDefaultName" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddNewResourceFromDefaultName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewResourceFromDefaultNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ConfigureFromMachineName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfigureFromMachineName" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ConfigureFromMachineName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfigureFromMachineNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ConfigureFromResourceName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfigureFromResourceName" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ConfigureFromResourceName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfigureFromResourceNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ResetResourceByDefaultName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResourceByDefaultName" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ResetResourceByDefaultName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResourceByDefaultNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ResetResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResource" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ResetResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNextImportId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextImportId" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNextImportId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextImportIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOperations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperations" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOperations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOperationsByOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByOrg" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOperationsByOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOperationsByOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceGroups" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceDestination_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceDestination" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceDestination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceOperation" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceOperationNotin_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceOperationNotin" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceOperationNotin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceOperationNotinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_CreateNewDefault_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDefault" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_CreateNewDefault_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewDefaultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceDestination_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceDestination" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceDestination_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceDestinationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceOperation_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceOperation" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceOperation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceOperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceOperationNotin_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceOperationNotin" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_RemoveResourceOperationNotin_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveResourceOperationNotinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_SaveConfigurationItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConfigurationItem" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_SaveConfigurationItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveConfigurationItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_InsertResourceChangesHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResourceChangesHistory" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_InsertResourceChangesHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResourceChangesHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_InsertNewNestPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewNestPost" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_InsertNewNestPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertNewNestPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceLibDataStagingLocArr_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceLibDataStagingLocArr" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceLibDataStagingLocArr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceLibDataStagingLocArrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceLibDataStaging_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceLibDataStaging" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_AddResourceLibDataStaging_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResourceLibDataStagingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ProcessOptiImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOptiImport" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ProcessOptiImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessOptiImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ProcessCancelImport_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCancelImport" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_ProcessCancelImport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessCancelImportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetMachineList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetMachineList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetMachineListByOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineListByOrg" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetMachineListByOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMachineListByOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOrgListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgListAll" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetOrgListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetDestinationListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDestinationListAll" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetDestinationListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDestinationListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListAll" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetResourceListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResourceListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNestResourcesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestResourcesList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNestResourcesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestResourcesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNestPostsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestPostsList" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetNestPostsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestPostsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetCategoryListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryListAll" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetCategoryListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetDestinationListByOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDestinationListByOrg" />
+  </wsdl:message>
+  <wsdl:message name="IResourceService_GetDestinationListByOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDestinationListByOrgResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IResourceService">
+    <wsdl:operation name="GetDefaults">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetDefaults" message="tns:IResourceService_GetDefaults_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetDefaultsResponse" message="tns:IResourceService_GetDefaults_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByMachine">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByMachine" message="tns:IResourceService_GetResourceListByMachine_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByMachineResponse" message="tns:IResourceService_GetResourceListByMachine_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceHistory" message="tns:IResourceService_GetResourceHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceHistoryResponse" message="tns:IResourceService_GetResourceHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByID" message="tns:IResourceService_GetResourceListByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByIDResponse" message="tns:IResourceService_GetResourceListByID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByResourceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByResourceName" message="tns:IResourceService_GetResourceListByResourceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByResourceNameResponse" message="tns:IResourceService_GetResourceListByResourceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByNestType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByNestType" message="tns:IResourceService_GetResourceListByNestType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceListByNestTypeResponse" message="tns:IResourceService_GetResourceListByNestType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddNewResource" message="tns:IResourceService_AddNewResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddNewResourceResponse" message="tns:IResourceService_AddNewResource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewResourceFromDefaultName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddNewResourceFromDefaultName" message="tns:IResourceService_AddNewResourceFromDefaultName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddNewResourceFromDefaultNameResponse" message="tns:IResourceService_AddNewResourceFromDefaultName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureFromMachineName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ConfigureFromMachineName" message="tns:IResourceService_ConfigureFromMachineName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ConfigureFromMachineNameResponse" message="tns:IResourceService_ConfigureFromMachineName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureFromResourceName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ConfigureFromResourceName" message="tns:IResourceService_ConfigureFromResourceName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ConfigureFromResourceNameResponse" message="tns:IResourceService_ConfigureFromResourceName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetResourceByDefaultName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ResetResourceByDefaultName" message="tns:IResourceService_ResetResourceByDefaultName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ResetResourceByDefaultNameResponse" message="tns:IResourceService_ResetResourceByDefaultName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ResetResource" message="tns:IResourceService_ResetResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ResetResourceResponse" message="tns:IResourceService_ResetResource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextImportId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetNextImportId" message="tns:IResourceService_GetNextImportId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetNextImportIdResponse" message="tns:IResourceService_GetNextImportId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetOperations" message="tns:IResourceService_GetOperations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetOperationsResponse" message="tns:IResourceService_GetOperations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsByOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetOperationsByOrg" message="tns:IResourceService_GetOperationsByOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetOperationsByOrgResponse" message="tns:IResourceService_GetOperationsByOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceGroups" message="tns:IResourceService_GetResourceGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceGroupsResponse" message="tns:IResourceService_GetResourceGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceDestination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddResourceDestination" message="tns:IResourceService_AddResourceDestination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddResourceDestinationResponse" message="tns:IResourceService_AddResourceDestination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddResourceOperation" message="tns:IResourceService_AddResourceOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddResourceOperationResponse" message="tns:IResourceService_AddResourceOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceOperationNotin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddResourceOperationNotin" message="tns:IResourceService_AddResourceOperationNotin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddResourceOperationNotinResponse" message="tns:IResourceService_AddResourceOperationNotin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewDefault">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/CreateNewDefault" message="tns:IResourceService_CreateNewDefault_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/CreateNewDefaultResponse" message="tns:IResourceService_CreateNewDefault_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceDestination">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceDestination" message="tns:IResourceService_RemoveResourceDestination_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceDestinationResponse" message="tns:IResourceService_RemoveResourceDestination_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceOperation">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceOperation" message="tns:IResourceService_RemoveResourceOperation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceOperationResponse" message="tns:IResourceService_RemoveResourceOperation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceOperationNotin">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceOperationNotin" message="tns:IResourceService_RemoveResourceOperationNotin_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/RemoveResourceOperationNotinResponse" message="tns:IResourceService_RemoveResourceOperationNotin_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfigurationItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/SaveConfigurationItem" message="tns:IResourceService_SaveConfigurationItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/SaveConfigurationItemResponse" message="tns:IResourceService_SaveConfigurationItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertResourceChangesHistory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/InsertResourceChangesHistory" message="tns:IResourceService_InsertResourceChangesHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/InsertResourceChangesHistoryResponse" message="tns:IResourceService_InsertResourceChangesHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewNestPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/InsertNewNestPost" message="tns:IResourceService_InsertNewNestPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/InsertNewNestPostResponse" message="tns:IResourceService_InsertNewNestPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceLibDataStagingLocArr">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddResourceLibDataStagingLocArr" message="tns:IResourceService_AddResourceLibDataStagingLocArr_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddResourceLibDataStagingLocArrResponse" message="tns:IResourceService_AddResourceLibDataStagingLocArr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceLibDataStaging">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/AddResourceLibDataStaging" message="tns:IResourceService_AddResourceLibDataStaging_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/AddResourceLibDataStagingResponse" message="tns:IResourceService_AddResourceLibDataStaging_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOptiImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ProcessOptiImport" message="tns:IResourceService_ProcessOptiImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ProcessOptiImportResponse" message="tns:IResourceService_ProcessOptiImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCancelImport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/ProcessCancelImport" message="tns:IResourceService_ProcessCancelImport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/ProcessCancelImportResponse" message="tns:IResourceService_ProcessCancelImport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetMachineList" message="tns:IResourceService_GetMachineList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetMachineListResponse" message="tns:IResourceService_GetMachineList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineListByOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetMachineListByOrg" message="tns:IResourceService_GetMachineListByOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetMachineListByOrgResponse" message="tns:IResourceService_GetMachineListByOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetOrgListAll" message="tns:IResourceService_GetOrgListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetOrgListAllResponse" message="tns:IResourceService_GetOrgListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetDestinationListAll" message="tns:IResourceService_GetDestinationListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetDestinationListAllResponse" message="tns:IResourceService_GetDestinationListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetResourceListAll" message="tns:IResourceService_GetResourceListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetResourceListAllResponse" message="tns:IResourceService_GetResourceListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNestResourcesList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetNestResourcesList" message="tns:IResourceService_GetNestResourcesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetNestResourcesListResponse" message="tns:IResourceService_GetNestResourcesList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNestPostsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetNestPostsList" message="tns:IResourceService_GetNestPostsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetNestPostsListResponse" message="tns:IResourceService_GetNestPostsList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetCategoryListAll" message="tns:IResourceService_GetCategoryListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetCategoryListAllResponse" message="tns:IResourceService_GetCategoryListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationListByOrg">
+      <wsdl:input wsaw:Action="http://tempuri.org/IResourceService/GetDestinationListByOrg" message="tns:IResourceService_GetDestinationListByOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IResourceService/GetDestinationListByOrgResponse" message="tns:IResourceService_GetDestinationListByOrg_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomBinding_IResourceService" type="tns:IResourceService">
+    <wsp:PolicyReference URI="#CustomBinding_IResourceService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDefaults">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetDefaults" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByMachine">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceListByMachine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceHistory">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByID">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceListByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByResourceName">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceListByResourceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListByNestType">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceListByNestType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewResource">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddNewResource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewResourceFromDefaultName">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddNewResourceFromDefaultName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureFromMachineName">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ConfigureFromMachineName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfigureFromResourceName">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ConfigureFromResourceName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetResourceByDefaultName">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ResetResourceByDefaultName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetResource">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ResetResource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextImportId">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetNextImportId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperations">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetOperations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperationsByOrg">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetOperationsByOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceGroups">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceDestination">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddResourceDestination" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceOperation">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddResourceOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceOperationNotin">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddResourceOperationNotin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewDefault">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/CreateNewDefault" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceDestination">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/RemoveResourceDestination" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceOperation">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/RemoveResourceOperation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveResourceOperationNotin">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/RemoveResourceOperationNotin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveConfigurationItem">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/SaveConfigurationItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertResourceChangesHistory">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/InsertResourceChangesHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNewNestPost">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/InsertNewNestPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceLibDataStagingLocArr">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddResourceLibDataStagingLocArr" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResourceLibDataStaging">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/AddResourceLibDataStaging" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessOptiImport">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ProcessOptiImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessCancelImport">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/ProcessCancelImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineList">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetMachineList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMachineListByOrg">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetMachineListByOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgListAll">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetOrgListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationListAll">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetDestinationListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResourceListAll">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetResourceListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNestResourcesList">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetNestResourcesList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNestPostsList">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetNestPostsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryListAll">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetCategoryListAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDestinationListByOrg">
+      <soap12:operation soapAction="http://tempuri.org/IResourceService/GetDestinationListByOrg" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResourceService">
+    <wsdl:port name="CustomBinding_IResourceService" binding="tns:CustomBinding_IResourceService">
+      <soap12:address location="http://dev-app-iis1:3541/ResourceService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dev-app-iis1:3541/ResourceService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

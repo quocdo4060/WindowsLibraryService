@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://dev-app-iis1:3521/PartService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" />
+  <xs:element name="GetPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+        <xs:element minOccurs="0" name="from_agile" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetPartResult" nillable="true" type="q1:Part" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrgPartList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partList" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetOrgPartListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetOrgPartListResult" nillable="true" type="q2:ArrayOfBasicPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgilePartDetail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgilePartDetailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetAgilePartDetailResult" nillable="true" type="q3:AgilePart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterials">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ElementName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMaterialsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetMaterialsResult" nillable="true" type="q4:ArrayOfElementList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgilePaintCodeList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAgilePaintCodeListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetAgilePaintCodeListResult" nillable="true" type="q5:ArrayOfPaintCode" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetBomResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetBomResult" nillable="true" type="q6:ArrayOfBom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingString">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingStringResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetRoutingStringResult" nillable="true" type="q7:ArrayOfBasicPartRouting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetRoutingListResult" nillable="true" type="q8:ArrayOfPartRouting" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="changeorder" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutingLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetRoutingLogResult" nillable="true" type="q9:ArrayOfRoutingLog" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartLibraryStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartLibraryStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetPartLibraryStatusResult" nillable="true" type="q10:ArrayOfResourceLibraryData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartLibrary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartLibraryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetPartLibraryResult" nillable="true" type="q11:ArrayOfResourceLibraryData" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartCost">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartCostResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetPartCostResult" nillable="true" type="q12:ArrayOfPartCost" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartQtyOnHand">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPartQtyOnHandResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetPartQtyOnHandResult" nillable="true" type="q13:ArrayOfPartQtyOnHand" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inventoryitemid" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceid" type="xs:int" />
+        <xs:element minOccurs="0" name="empid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="GetNotesResult" nillable="true" type="q14:ArrayOfPartNote" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MaintainNote">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="inventoryitemid" type="xs:int" />
+        <xs:element minOccurs="0" name="resourceid" type="xs:int" />
+        <xs:element minOccurs="0" name="empid" type="xs:int" />
+        <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="overwrite" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MaintainNoteResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartLibraryErrored">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartLibraryErroredResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="SearchPartLibraryErroredResult" nillable="true" type="q15:ArrayOfBasicPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartLibraryErroredAdvanced">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="machineName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="startDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="endDate" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartLibraryErroredAdvancedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="SearchPartLibraryErroredAdvancedResult" nillable="true" type="q16:ArrayOfBasicPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchParts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="bBuyPartsOnly" type="xs:boolean" />
+        <xs:element minOccurs="0" name="strPartNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+        <xs:element minOccurs="0" name="strDesc" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strMatCode" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="sSubClass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="SearchPartsResult" nillable="true" type="q17:ArrayOfBasicPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartsByDesign">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPartNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strorgid" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPartsByDesignResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="SearchPartsByDesignResult" nillable="true" type="q18:ArrayOfDesignPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPaintCodeOnParts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="database" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPartNumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+        <xs:element minOccurs="0" name="strPaintCode1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="strPaintCode2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchPaintCodeOnPartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" minOccurs="0" name="SearchPaintCodeOnPartsResult" nillable="true" type="q19:ArrayOfPart" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

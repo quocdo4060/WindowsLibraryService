@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" />
+  <xs:element name="ProcessLibraryRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" minOccurs="0" name="theLibReq" nillable="true" type="q1:LibraryRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ProcessLibraryRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ProcessLibraryRequestResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueRecords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orgid" type="xs:int" />
+        <xs:element minOccurs="0" name="partnumber" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="workcenter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetQueueRecordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" minOccurs="0" name="GetQueueRecordsResult" nillable="true" type="q2:ArrayOfQueueRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishQueueRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordid" type="xs:int" />
+        <xs:element minOccurs="0" name="resultStatus" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FinishQueueRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="FinishQueueRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartQueueRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="StartQueueRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="StartQueueRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetQueueRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="recordid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResetQueueRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResetQueueRecordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLibraryResult">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" minOccurs="0" name="qrec" nillable="true" type="q3:QueueRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InsertLibraryResultResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="InsertLibraryResultResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextQueueRecord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Resource" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNextQueueRecordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" minOccurs="0" name="GetNextQueueRecordResult" nillable="true" type="q4:QueueRecord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

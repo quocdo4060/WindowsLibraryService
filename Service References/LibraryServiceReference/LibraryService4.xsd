@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LibraryRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MATERIALCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENTPART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VARIANTFLAG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORKCENTERS" nillable="true" type="tns:ArrayOfWorkCenter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LibraryRequest" nillable="true" type="tns:LibraryRequest" />
+  <xs:complexType name="ArrayOfWorkCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WorkCenter" nillable="true" type="tns:WorkCenter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWorkCenter" nillable="true" type="tns:ArrayOfWorkCenter" />
+  <xs:complexType name="WorkCenter">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Path" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WorkCenter" nillable="true" type="tns:WorkCenter" />
+  <xs:complexType name="ArrayOfQueueRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueRecord" nillable="true" type="tns:QueueRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueRecord" nillable="true" type="tns:ArrayOfQueueRecord" />
+  <xs:complexType name="QueueRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTIONNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADDED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ADD_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="BASEPART" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERRORLOG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="HITS" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_TWIN" type="xs:int" />
+      <xs:element minOccurs="0" name="LIBRARYPATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIALCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PARTNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIERCES" type="xs:int" />
+      <xs:element minOccurs="0" name="POST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIORITY" type="xs:int" />
+      <xs:element minOccurs="0" name="RESULT_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLCHANGES" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLPATH" type="xs:int" />
+      <xs:element minOccurs="0" name="VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORKCENTER" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueRecord" nillable="true" type="tns:QueueRecord" />
+  <xs:complexType name="ArrayOfLibraryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibraryResult" nillable="true" type="tns:LibraryResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibraryResult" nillable="true" type="tns:ArrayOfLibraryResult" />
+  <xs:complexType name="LibraryResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FINISH_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PARTNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REQUESTDATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="RESULT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_DATE" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LibraryResult" nillable="true" type="tns:LibraryResult" />
+  <xs:complexType name="ArrayOfQueueTotals">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QueueTotals" nillable="true" type="tns:QueueTotals" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQueueTotals" nillable="true" type="tns:ArrayOfQueueTotals" />
+  <xs:complexType name="QueueTotals">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COMPLETE_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="ERROR_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="INPROCESS_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="LIBRARYPATH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NODXF_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="NOTFND_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="ONHOLD_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="PENDING_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="PROCESSING_DATA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUCCESS_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="TIMEOUT_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="WORKCCENTER_COUNT" type="xs:int" />
+      <xs:element minOccurs="0" name="WORKCENTER" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QueueTotals" nillable="true" type="tns:QueueTotals" />
+  <xs:complexType name="ArrayOfLibraryRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibraryRecord" nillable="true" type="tns:LibraryRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibraryRecord" nillable="true" type="tns:ArrayOfLibraryRecord" />
+  <xs:complexType name="LibraryRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADD_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ERRORLOG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FINISH_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOG_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POSTPROCESSOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESULT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="START_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LibraryRecord" nillable="true" type="tns:LibraryRecord" />
+  <xs:complexType name="RollFormCnc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BLANKWIDTH" type="xs:decimal" />
+      <xs:element minOccurs="0" name="CNC_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COILMATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COILWIDTH" type="xs:decimal" />
+      <xs:element minOccurs="0" name="HEIGHT" type="xs:decimal" />
+      <xs:element minOccurs="0" name="LINER" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STARTER_PANEL" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RollFormCnc" nillable="true" type="tns:RollFormCnc" />
+  <xs:complexType name="ArrayOfNestPost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="NestPost" nillable="true" type="tns:NestPost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfNestPost" nillable="true" type="tns:ArrayOfNestPost" />
+  <xs:complexType name="NestPost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="POSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYNCPOST" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="NestPost" nillable="true" type="tns:NestPost" />
+</xs:schema>

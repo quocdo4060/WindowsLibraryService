@@ -1,0 +1,767 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LibraryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="CustomBinding_ILibraryService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <msb:BinaryEncoding xmlns:msb="http://schemas.microsoft.com/ws/06/2004/mspolicy/netbinary1" />
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://dev-app-iis1:3721/LibraryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3721/LibraryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3721/LibraryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" />
+      <xsd:import schemaLocation="http://dev-app-iis1:3721/LibraryService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILibraryService_ProcessLibraryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLibraryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ProcessLibraryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLibraryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueRecords" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_LogError_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogError" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_LogError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_FinishQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_FinishQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueue_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueue" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueue_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueueResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_StartQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_StartQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryResultsByResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryResultsByResource" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryResultsByResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryResultsByResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryResultsByResourceNest_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryResultsByResourceNest" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryResultsByResourceNest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryResultsByResourceNestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetSyncResultsByResource_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncResultsByResource" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetSyncResultsByResource_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSyncResultsByResourceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_InsertLibraryResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLibraryResult" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_InsertLibraryResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLibraryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNextQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNextQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ScrubQueueResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScrubQueueResult" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ScrubQueueResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScrubQueueResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ToggleLibraryPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:ToggleLibraryPost" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ToggleLibraryPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ToggleLibraryPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueTotals_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueTotals" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueTotals_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueTotalsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ProcessManualRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessManualRequest" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ProcessManualRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessManualRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ClearPendingByWorkcenterDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearPendingByWorkcenterDateRange" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ClearPendingByWorkcenterDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearPendingByWorkcenterDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ClearSyncsByWorkcenter_InputMessage">
+    <wsdl:part name="parameters" element="tns:ClearSyncsByWorkcenter" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ClearSyncsByWorkcenter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ClearSyncsByWorkcenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByPart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByPart" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByPart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterDateRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterDateRange" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterDateRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterResult" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterStatus" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryByWorkcenterStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryByWorkcenterStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryHistoryByPart_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryHistoryByPart" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetLibraryHistoryByPart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLibraryHistoryByPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetRollformerCode_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRollformerCode" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetRollformerCode_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRollformerCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetResultTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultTypes" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetResultTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResultTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNestPostsList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestPostsList" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNestPostsList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNestPostsListResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILibraryService">
+    <wsdl:operation name="ProcessLibraryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ProcessLibraryRequest" message="tns:ILibraryService_ProcessLibraryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ProcessLibraryRequestResponse" message="tns:ILibraryService_ProcessLibraryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetQueueRecords" message="tns:ILibraryService_GetQueueRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetQueueRecordsResponse" message="tns:ILibraryService_GetQueueRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/LogError" message="tns:ILibraryService_LogError_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/LogErrorResponse" message="tns:ILibraryService_LogError_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/FinishQueueRecord" message="tns:ILibraryService_FinishQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/FinishQueueRecordResponse" message="tns:ILibraryService_FinishQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueue">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ResetQueue" message="tns:ILibraryService_ResetQueue_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ResetQueueResponse" message="tns:ILibraryService_ResetQueue_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/StartQueueRecord" message="tns:ILibraryService_StartQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/StartQueueRecordResponse" message="tns:ILibraryService_StartQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ResetQueueRecord" message="tns:ILibraryService_ResetQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ResetQueueRecordResponse" message="tns:ILibraryService_ResetQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryResultsByResource" message="tns:ILibraryService_GetLibraryResultsByResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryResultsByResourceResponse" message="tns:ILibraryService_GetLibraryResultsByResource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResourceNest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryResultsByResourceNest" message="tns:ILibraryService_GetLibraryResultsByResourceNest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryResultsByResourceNestResponse" message="tns:ILibraryService_GetLibraryResultsByResourceNest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncResultsByResource">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetSyncResultsByResource" message="tns:ILibraryService_GetSyncResultsByResource_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetSyncResultsByResourceResponse" message="tns:ILibraryService_GetSyncResultsByResource_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLibraryResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/InsertLibraryResult" message="tns:ILibraryService_InsertLibraryResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/InsertLibraryResultResponse" message="tns:ILibraryService_InsertLibraryResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetNextQueueRecord" message="tns:ILibraryService_GetNextQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetNextQueueRecordResponse" message="tns:ILibraryService_GetNextQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScrubQueueResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ScrubQueueResult" message="tns:ILibraryService_ScrubQueueResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ScrubQueueResultResponse" message="tns:ILibraryService_ScrubQueueResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ToggleLibraryPost">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ToggleLibraryPost" message="tns:ILibraryService_ToggleLibraryPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ToggleLibraryPostResponse" message="tns:ILibraryService_ToggleLibraryPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueTotals">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetQueueTotals" message="tns:ILibraryService_GetQueueTotals_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetQueueTotalsResponse" message="tns:ILibraryService_GetQueueTotals_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessManualRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ProcessManualRequest" message="tns:ILibraryService_ProcessManualRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ProcessManualRequestResponse" message="tns:ILibraryService_ProcessManualRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearPendingByWorkcenterDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ClearPendingByWorkcenterDateRange" message="tns:ILibraryService_ClearPendingByWorkcenterDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ClearPendingByWorkcenterDateRangeResponse" message="tns:ILibraryService_ClearPendingByWorkcenterDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearSyncsByWorkcenter">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ClearSyncsByWorkcenter" message="tns:ILibraryService_ClearSyncsByWorkcenter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ClearSyncsByWorkcenterResponse" message="tns:ILibraryService_ClearSyncsByWorkcenter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByPart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByPart" message="tns:ILibraryService_GetLibraryByPart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByPartResponse" message="tns:ILibraryService_GetLibraryByPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterDateRange">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterDateRange" message="tns:ILibraryService_GetLibraryByWorkcenterDateRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterDateRangeResponse" message="tns:ILibraryService_GetLibraryByWorkcenterDateRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterResult" message="tns:ILibraryService_GetLibraryByWorkcenterResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterResultResponse" message="tns:ILibraryService_GetLibraryByWorkcenterResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterStatus" message="tns:ILibraryService_GetLibraryByWorkcenterStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterStatusResponse" message="tns:ILibraryService_GetLibraryByWorkcenterStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryHistoryByPart">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryHistoryByPart" message="tns:ILibraryService_GetLibraryHistoryByPart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetLibraryHistoryByPartResponse" message="tns:ILibraryService_GetLibraryHistoryByPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRollformerCode">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetRollformerCode" message="tns:ILibraryService_GetRollformerCode_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetRollformerCodeResponse" message="tns:ILibraryService_GetRollformerCode_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetResultTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetResultTypes" message="tns:ILibraryService_GetResultTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetResultTypesResponse" message="tns:ILibraryService_GetResultTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNestPostsList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetNestPostsList" message="tns:ILibraryService_GetNestPostsList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetNestPostsListResponse" message="tns:ILibraryService_GetNestPostsList_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILibraryService" type="tns:ILibraryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessLibraryRequest">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ProcessLibraryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueRecords">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetQueueRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/LogError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/FinishQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueue">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ResetQueue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/StartQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ResetQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResource">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryResultsByResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResourceNest">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryResultsByResourceNest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncResultsByResource">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetSyncResultsByResource" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLibraryResult">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/InsertLibraryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetNextQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrubQueueResult">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ScrubQueueResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleLibraryPost">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ToggleLibraryPost" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueTotals">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetQueueTotals" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessManualRequest">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ProcessManualRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPendingByWorkcenterDateRange">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ClearPendingByWorkcenterDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearSyncsByWorkcenter">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ClearSyncsByWorkcenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByPart">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByPart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterDateRange">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterResult">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterStatus">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryHistoryByPart">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryHistoryByPart" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRollformerCode">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetRollformerCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultTypes">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetResultTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNestPostsList">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetNestPostsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CustomBinding_ILibraryService" type="tns:ILibraryService">
+    <wsp:PolicyReference URI="#CustomBinding_ILibraryService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessLibraryRequest">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ProcessLibraryRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueRecords">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetQueueRecords" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogError">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/LogError" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishQueueRecord">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/FinishQueueRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueue">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ResetQueue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartQueueRecord">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/StartQueueRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueueRecord">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ResetQueueRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResource">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryResultsByResource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryResultsByResourceNest">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryResultsByResourceNest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSyncResultsByResource">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetSyncResultsByResource" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLibraryResult">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/InsertLibraryResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQueueRecord">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetNextQueueRecord" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScrubQueueResult">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ScrubQueueResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ToggleLibraryPost">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ToggleLibraryPost" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueTotals">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetQueueTotals" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessManualRequest">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ProcessManualRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearPendingByWorkcenterDateRange">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ClearPendingByWorkcenterDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearSyncsByWorkcenter">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/ClearSyncsByWorkcenter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByPart">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByPart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterDateRange">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterResult">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterResult" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryByWorkcenterStatus">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryByWorkcenterStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLibraryHistoryByPart">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetLibraryHistoryByPart" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRollformerCode">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetRollformerCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetResultTypes">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetResultTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNestPostsList">
+      <soap12:operation soapAction="http://tempuri.org/ILibraryService/GetNestPostsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryService">
+    <wsdl:port name="BasicHttpBinding_ILibraryService" binding="tns:BasicHttpBinding_ILibraryService">
+      <soap:address location="http://dev-app-iis1:3721/LibraryService.svc" />
+    </wsdl:port>
+    <wsdl:port name="CustomBinding_ILibraryService" binding="tns:CustomBinding_ILibraryService">
+      <soap12:address location="http://dev-app-iis1:3721/LibraryService.svc/customService" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://dev-app-iis1:3721/LibraryService.svc/customService</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LibraryService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://it-pwl-appsrc1:3721/LibraryService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.LibraryService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILibraryService_ProcessLibraryRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLibraryRequest" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ProcessLibraryRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessLibraryRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueRecords" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetQueueRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQueueRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_FinishQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FinishQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_FinishQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FinishQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_StartQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_StartQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_ResetQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResetQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_InsertLibraryResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLibraryResult" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_InsertLibraryResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertLibraryResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNextQueueRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQueueRecord" />
+  </wsdl:message>
+  <wsdl:message name="ILibraryService_GetNextQueueRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQueueRecordResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILibraryService">
+    <wsdl:operation name="ProcessLibraryRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ProcessLibraryRequest" message="tns:ILibraryService_ProcessLibraryRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ProcessLibraryRequestResponse" message="tns:ILibraryService_ProcessLibraryRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetQueueRecords" message="tns:ILibraryService_GetQueueRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetQueueRecordsResponse" message="tns:ILibraryService_GetQueueRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FinishQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/FinishQueueRecord" message="tns:ILibraryService_FinishQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/FinishQueueRecordResponse" message="tns:ILibraryService_FinishQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/StartQueueRecord" message="tns:ILibraryService_StartQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/StartQueueRecordResponse" message="tns:ILibraryService_StartQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/ResetQueueRecord" message="tns:ILibraryService_ResetQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/ResetQueueRecordResponse" message="tns:ILibraryService_ResetQueueRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertLibraryResult">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/InsertLibraryResult" message="tns:ILibraryService_InsertLibraryResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/InsertLibraryResultResponse" message="tns:ILibraryService_InsertLibraryResult_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQueueRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILibraryService/GetNextQueueRecord" message="tns:ILibraryService_GetNextQueueRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILibraryService/GetNextQueueRecordResponse" message="tns:ILibraryService_GetNextQueueRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILibraryService" type="tns:ILibraryService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ProcessLibraryRequest">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ProcessLibraryRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQueueRecords">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetQueueRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FinishQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/FinishQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/StartQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/ResetQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertLibraryResult">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/InsertLibraryResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQueueRecord">
+      <soap:operation soapAction="http://tempuri.org/ILibraryService/GetNextQueueRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LibraryService">
+    <wsdl:port name="BasicHttpBinding_ILibraryService" binding="tns:BasicHttpBinding_ILibraryService">
+      <soap:address location="http://it-pwl-appsrc1:3721/LibraryService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

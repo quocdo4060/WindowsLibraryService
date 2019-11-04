@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Powell.MFGSVC.PartInfo" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Part">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AREA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BASIC_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIRC_PERI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIGURATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUSTOMER_FURNISHED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DENSITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DENSITY_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESIGNSTATE_PUBLISH_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DESIGN_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIMENSION_UOM_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GAUGE_SCHEDULE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GROUND_BUS_PLATING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INSULATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_STATUS_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATED_BY_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="LBFT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_SPEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PAINT_COLOR_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAINT_COLOR_CODE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_HEIGHT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_LENGTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_WEIGHT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_WIDTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLANNING_CATEGORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLATING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRODUCT_LINES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THICKNESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPE_GRADE_STANDARD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WEIGHT_UOM_CODE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Part" nillable="true" type="tns:Part" />
+  <xs:complexType name="ArrayOfBasicPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicPart" nillable="true" type="tns:BasicPart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicPart" nillable="true" type="tns:ArrayOfBasicPart" />
+  <xs:complexType name="BasicPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_STATUS_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PART_LENGTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_WIDTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLANNING_CATEGORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicPart" nillable="true" type="tns:BasicPart" />
+  <xs:complexType name="AgilePart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ADDITIONAL_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ALTERNATE_PRODUCT_LINES" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AREA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BASIC_MATERIAL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT3" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CAT4" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CIRC_PERI" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CONFIGURATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CUSTOMER_FURNISHED" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DENSITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DENSITY_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESIGNSTATE_PUBLISH_DATE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESIGN_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DIM_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GAUGE_SCHEDULE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GND_BUS_PLATING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INSULATION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEMNUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_PUBLISHED_VERSION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LBFT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LENGTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LIFECYCLE_PHASE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_SPEC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAINT_COLOR_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAINT_COLOR_CODE2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLANNING_CATEGORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PLATING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PRIMARY_PRODUCT_LINE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="REVISING_ENGINEER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="THICKNESS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TYPE_GRADE_STANDARD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WEIGHT_UOM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WIDTH" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AgilePart" nillable="true" type="tns:AgilePart" />
+  <xs:complexType name="ArrayOfElementList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ElementList" nillable="true" type="tns:ElementList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfElementList" nillable="true" type="tns:ArrayOfElementList" />
+  <xs:complexType name="ElementList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ELEMENT_VALUE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ElementList" nillable="true" type="tns:ElementList" />
+  <xs:complexType name="ArrayOfPaintCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PaintCode" nillable="true" type="tns:PaintCode" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPaintCode" nillable="true" type="tns:ArrayOfPaintCode" />
+  <xs:complexType name="PaintCode">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PAINTCODE" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PaintCode" nillable="true" type="tns:PaintCode" />
+  <xs:complexType name="ArrayOfBom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Bom" nillable="true" type="tns:Bom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBom" nillable="true" type="tns:ArrayOfBom" />
+  <xs:complexType name="Bom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ASSEMBLY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BOM_SUPPLY_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="COMPONENT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPONENT_ITEM_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMPONENT_STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COMP_DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATED_BY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CREATION_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DISABLE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EFFECTIVE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ITEM_SEQ" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_SUPPLY_TYPE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPERATION_SEQ_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGCODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PAINT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QUANTITY" type="xs:int" />
+      <xs:element minOccurs="0" name="UOM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Bom" nillable="true" type="tns:Bom" />
+  <xs:complexType name="ArrayOfBasicPartRouting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BasicPartRouting" nillable="true" type="tns:BasicPartRouting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBasicPartRouting" nillable="true" type="tns:ArrayOfBasicPartRouting" />
+  <xs:complexType name="BasicPartRouting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_ROUTING" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BasicPartRouting" nillable="true" type="tns:BasicPartRouting" />
+  <xs:complexType name="ArrayOfPartRouting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartRouting" nillable="true" type="tns:PartRouting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartRouting" nillable="true" type="tns:ArrayOfPartRouting" />
+  <xs:complexType name="PartRouting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DEPARTMENT_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LAST_UPDATE_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="MACHINE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MACHINE_USAGERATE" type="xs:decimal" />
+      <xs:element minOccurs="0" name="OPERATION_TYPE" type="xs:int" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_ROUTING" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_SEQUENCE" type="xs:int" />
+      <xs:element minOccurs="0" name="QUEUE_TIME" type="xs:int" />
+      <xs:element minOccurs="0" name="REFERENCE_FLAG" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartRouting" nillable="true" type="tns:PartRouting" />
+  <xs:complexType name="ArrayOfRoutingLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RoutingLog" nillable="true" type="tns:RoutingLog" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRoutingLog" nillable="true" type="tns:ArrayOfRoutingLog" />
+  <xs:complexType name="RoutingLog">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="COID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ERROR_MSG" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOG_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ORG_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORG_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PARTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RoutingLog" nillable="true" type="tns:RoutingLog" />
+  <xs:complexType name="ArrayOfResourceLibraryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ResourceLibraryData" nillable="true" type="tns:ResourceLibraryData" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfResourceLibraryData" nillable="true" type="tns:ArrayOfResourceLibraryData" />
+  <xs:complexType name="ResourceLibraryData">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HITS" type="xs:int" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOG_DATE" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PARTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PIERCES" type="xs:int" />
+      <xs:element minOccurs="0" name="POSTPROCESSOR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCENAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TOOLCHANGES" type="xs:int" />
+      <xs:element minOccurs="0" name="TOOLPATH" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ResourceLibraryData" nillable="true" type="tns:ResourceLibraryData" />
+  <xs:complexType name="ArrayOfPartCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartCost" nillable="true" type="tns:PartCost" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartCost" nillable="true" type="tns:ArrayOfPartCost" />
+  <xs:complexType name="PartCost">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MATERIAL_COST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MAT_ON_HAND_COST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORG_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORG_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="ORG_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OUTSIDE_PROC_COST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OVERHEAD_COST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_COST" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCE_COST" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartCost" nillable="true" type="tns:PartCost" />
+  <xs:complexType name="ArrayOfPartQtyOnHand">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartQtyOnHand" nillable="true" type="tns:PartQtyOnHand" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartQtyOnHand" nillable="true" type="tns:ArrayOfPartQtyOnHand" />
+  <xs:complexType name="PartQtyOnHand">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LOC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ON_HAND_QTY" type="xs:decimal" />
+      <xs:element minOccurs="0" name="ORG_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORG_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SUBINVENTORY_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="UOM" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartQtyOnHand" nillable="true" type="tns:PartQtyOnHand" />
+  <xs:complexType name="ArrayOfPartNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PartNote" nillable="true" type="tns:PartNote" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPartNote" nillable="true" type="tns:ArrayOfPartNote" />
+  <xs:complexType name="PartNote">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DATE_CHANGED" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EMPID" type="xs:int" />
+      <xs:element minOccurs="0" name="INVENTORY_ITEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="MES_RESOURCEID" type="xs:int" />
+      <xs:element minOccurs="0" name="NOTE_TEXT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PART_NUM" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RESOURCE_NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USER_NAME" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PartNote" nillable="true" type="tns:PartNote" />
+  <xs:complexType name="ArrayOfDesignPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DesignPart" nillable="true" type="tns:DesignPart" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDesignPart" nillable="true" type="tns:ArrayOfDesignPart" />
+  <xs:complexType name="DesignPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ITEM_NUMBER" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LENGTH" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LIFECYCLE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MATERIAL_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ORGID" type="xs:int" />
+      <xs:element minOccurs="0" name="PLANNING_CATEGORY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WIDTH" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DesignPart" nillable="true" type="tns:DesignPart" />
+  <xs:complexType name="ArrayOfPart">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Part" nillable="true" type="tns:Part" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPart" nillable="true" type="tns:ArrayOfPart" />
+</xs:schema>
